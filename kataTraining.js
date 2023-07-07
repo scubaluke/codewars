@@ -83,4 +83,19 @@ function generateHashtag(string) {
 
   return hashed;
 }
-console.log(generateHashtag('Do We have A Hashtag'));
+// console.log(generateHashtag('Do We have A Hashtag'));
+
+//https://www.codewars.com/kata/529adbf7533b761c560004e5/train/javascript
+
+const memoized = {};
+function fibonacci(n) {
+  if (n < 2) return n;
+  if (!memoized[n]) {
+    const result = fibonacci(n - 1) + fibonacci(n - 2);
+    memoized[n] = result;
+    return result;
+  }
+
+  return memoized[n];
+}
+console.log(fibonacci(8));
