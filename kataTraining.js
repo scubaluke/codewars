@@ -61,4 +61,26 @@ decodeMorse = function (morseCode) {
 };
 
 // console.log(decodeMorse('.... . -.--   .--- ..- -.. .'));
-console.log(decodeMorse('   .... . -.--   '));
+// console.log(decodeMorse('   .... . -.--   '));
+
+//https://www.codewars.com/kata/52449b062fb80683ec000024/train/javascript
+
+function hashTagize(string) {
+  const result = string
+    .split(' ')
+    .map((word) => `${word.charAt(0).toUpperCase()}${word.slice(1)}`)
+    .join('');
+
+  return `#${result}`;
+}
+
+function generateHashtag(string) {
+  if (!string.trim()) return false;
+
+  const hashed = hashTagize(string);
+
+  if (hashed.length > 140) return false;
+
+  return hashed;
+}
+console.log(generateHashtag('Do We have A Hashtag'));
